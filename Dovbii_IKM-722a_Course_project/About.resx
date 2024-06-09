@@ -117,19 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Розробив
-Студент групи ІКМ-722а
-Довбій Д. Ю.
-
-Текст завдання:
-Заняття 2.
-1. Відкрити проект з готовим кодом з заняття 1
-2. Створити новий клас. Даний клас зберігає поля і методи для реалізації
-курсового проекту. Всі змінні і функції, які стосуються реалізації курсового
-завдання слід описувати в даному класі. Все, що стосується зміни візуальної
-оболонки описується в класі Form1.</value>
-  </data>
   <metadata name="tAbout.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
