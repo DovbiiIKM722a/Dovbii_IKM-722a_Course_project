@@ -31,6 +31,7 @@ namespace Dovbii_IKM_722a_Course_project
         {
             MajorObject = new MajorWork();
             MajorObject.SetTime();
+            MajorObject.Modify = false;// заборона запису
             About A = new About(); // створення форми About
             A.tAbout.Start();
             A.ShowDialog(); // відображення діалогового вікна About
@@ -97,11 +98,13 @@ namespace Dovbii_IKM_722a_Course_project
             A.ShowDialog();
         }
 
+
         private void зберегтиЯкToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (sfdSave.ShowDialog() == DialogResult.OK)// Виклик діалогового вікна збереження файлу
             {
-                MessageBox.Show(sfdSave.FileName);
+                MajorObject.WriteSaveFileName(sfdSave.FileName); // написання імені файлу
+                MajorObject.SaveToFile(); // метод збереження в файл
             }
         }
 
@@ -116,21 +119,21 @@ namespace Dovbii_IKM_722a_Course_project
         private void проНакопичувачіToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string[] Disks = System.IO.Directory.GetLogicalDrives(); // Строковий масив з логічніх дисків
-            string disk = "";
+            string Disk = "";
             for (int i = 0; i < Disks.Length; i++)
             {
                 try
                 {
                     System.IO.DriveInfo D = new System.IO.DriveInfo(Disks[i]);
-                    disk += D.Name + "-" + D.TotalSize.ToString() + "-" + D.TotalFreeSpace.ToString()
+                    Disk += D.Name + "-" + D.TotalSize.ToString() + "-" + D.TotalFreeSpace.ToString()
                     + (char)13;// змінній присвоюється ім’я диска, загальна кількість місця и вільне місце на диску
                 }
                 catch
                 {
-                    disk += Disks[i] + "- не готовий" + (char)13; // якщо пристрій не готовий, то виведення на екран ім’я пристрою і повідомлення «не готовий»
+                    Disk += Disks[i] + "- не готовий" + (char)13; // якщо пристрій не готовий, то виведення на екран ім’я пристрою і повідомлення «не готовий»
                 }
             }
-            MessageBox.Show(disk, "Накопичувачі");
+            MessageBox.Show(Disk, "Накопичувачі");
         }
     }
 }
