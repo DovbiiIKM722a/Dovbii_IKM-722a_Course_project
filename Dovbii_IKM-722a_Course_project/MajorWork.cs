@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Dovbii_IKM_722a_Course_project
 {
@@ -18,6 +19,10 @@ namespace Dovbii_IKM_722a_Course_project
         private string Result; // Поле результату
         public bool Modify;
         private int Key;// поле ключа
+        public Stack myStack = new Stack();
+        public string[] myArr = new string[100];
+        public Queue myQueue = new Queue();
+        public string[] smyQueue = new string[100];
         private string SaveFileName;// ім’я файлу для запису
         private string OpenFileName;// ім’я файлу для читання
         public void WriteSaveFileName(string S)// метод запису даних в об'єкт
@@ -62,7 +67,7 @@ namespace Dovbii_IKM_722a_Course_project
         public void SaveToFile() // Запис даних до файлу
         {
             if (!this.Modify)
-            return;
+                return;
             try
             {
                 Stream S; // створення потоку
@@ -75,14 +80,16 @@ namespace Dovbii_IKM_722a_Course_project
                 D.Result = Convert.ToString(this.Result);
                 D.Key = Key;
                 Key++;
-                BinaryFormatter BF = new BinaryFormatter(); // створення об'єкта для форматування BF.Serialize(S, D);
+                BinaryFormatter BF = new BinaryFormatter(); // створення об'єкта для форматування
+                BF.Serialize(S, D);
                 S.Flush(); // очищення буфера потоку
                 S.Close(); // закриття потоку
                 this.Modify = false; // Заборона повторного запису
             }
             catch
             {
-                MessageBox.Show("Помилка роботи з файлом"); // Виведення на екран повідомлення "Помилка роботи з файлом"
+
+                MessageBox.Show("Помилка роботи з файлом"); // Виведення на екран повідомлення "Помилjrроботи з файлом"
             }
         }
         public void ReadFromFile(System.Windows.Forms.DataGridView DG) // зчитування з файлу

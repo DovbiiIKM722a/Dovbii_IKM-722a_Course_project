@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(347, 247);
+            this.button1.Location = new System.Drawing.Point(914, 346);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 80);
             this.button1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(344, 99);
+            this.label1.Location = new System.Drawing.Point(911, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 78);
             this.label1.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(37, 391);
+            this.progressBar1.Location = new System.Drawing.Point(621, 567);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(718, 23);
             this.progressBar1.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(2126, 952);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
