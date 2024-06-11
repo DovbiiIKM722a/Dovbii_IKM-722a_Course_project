@@ -73,14 +73,13 @@ namespace Dovbii_IKM_722a_Course_project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MajorObject = new MajorWork();
-            MajorObject.SetTime();
-            MajorObject.Modify = false;// заборона запису
             About A = new About(); // створення форми About
             A.tAbout.Start();
             A.ShowDialog(); // відображення діалогового вікна About
             MajorObject = new MajorWork();
+            MajorObject.Modify = false;// заборона запису
             this.Mode = true;
+            MajorObject.SetTime();
             toolTip1.SetToolTip(bSearch, "Натисніть на кнопку для пошуку");
             toolTip1.IsBalloon = true;
             // отримуємо список СОМ портов системи
