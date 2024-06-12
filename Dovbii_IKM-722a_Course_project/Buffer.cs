@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dovbii_IKM_722a_Course_project
 {
+    [Serializable]
     internal class Buffer
     {
         public string Data; // вхідні дані

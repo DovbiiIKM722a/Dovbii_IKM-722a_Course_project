@@ -119,7 +119,8 @@ namespace Dovbii_IKM_722a_Course_project
                     return;
                 }
                 Stream S; // створення потоку
-                S = File.Open(this.OpenFileName, FileMode.Open); // зчитування даних з файлу Buffer D;
+                S = File.Open(this.OpenFileName, FileMode.Open); // зчитування даних з файлу
+                Buffer D;
                 object O; // буферна змінна для контролю формату
                 BinaryFormatter BF = new BinaryFormatter(); // створення об'єкту для форматування
                 //формуємо таблицю
@@ -136,7 +137,7 @@ namespace Dovbii_IKM_722a_Course_project
                 while (S.Position < S.Length)
                 {
                     O = BF.Deserialize(S); // десеріалізація
-                    Buffer D = O as Buffer;
+                    D = O as Buffer;
                     if (D == null) break;
                     System.Data.DataRow MR;
                     MR = MT.NewRow();
